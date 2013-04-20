@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LunarBase.WebData.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LunarBase.WebData.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54477/WebServices/GameService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LunarBase.WebData" />
+  <xs:import schemaLocation="http://localhost:54477/WebServices/GameService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="UserProfile">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/LunarBase.WebData" base="q1:PropertyChange">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="City" nillable="true" type="tns:City" />
+          <xs:element minOccurs="0" name="CityId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsApproved" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ProviderUserKey" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="RaceId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserProfile" nillable="true" type="tns:UserProfile" />
+  <xs:complexType name="City">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BuildingInCityIds" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="BuildingsInCity" nillable="true" type="tns:ArrayOfBuildingInCity" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ResourceStorageIds" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UnitinCityIds" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="City" nillable="true" type="tns:City" />
+  <xs:complexType name="ArrayOfBuildingInCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BuildingInCity" nillable="true" type="tns:BuildingInCity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBuildingInCity" nillable="true" type="tns:ArrayOfBuildingInCity" />
+  <xs:complexType name="BuildingInCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Building" nillable="true" type="tns:Building" />
+      <xs:element minOccurs="0" name="BuildingId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LunarBase.WebData" minOccurs="0" name="Status" type="q5:BuildingStatuses" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BuildingInCity" nillable="true" type="tns:BuildingInCity" />
+  <xs:complexType name="Building">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/LunarBase.WebData" base="q6:PropertyChange">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BuildsCompleted" type="xs:int" />
+          <xs:element minOccurs="0" name="BuildsRequested" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Resources" nillable="true" type="tns:ArrayOfResourceInBuilding" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Building" nillable="true" type="tns:Building" />
+  <xs:complexType name="ArrayOfResourceInBuilding">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceInBuilding" nillable="true" type="tns:ResourceInBuilding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceInBuilding" nillable="true" type="tns:ArrayOfResourceInBuilding" />
+  <xs:complexType name="ResourceInBuilding">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProducePerTurn" type="xs:int" />
+      <xs:element minOccurs="0" name="ResourceId" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/LunarBase.WebData" minOccurs="0" name="UsefullType" type="q7:UsefullTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceInBuilding" nillable="true" type="tns:ResourceInBuilding" />
+  <xs:complexType name="ArrayOfBuilding">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Building" nillable="true" type="tns:Building" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBuilding" nillable="true" type="tns:ArrayOfBuilding" />
+  <xs:complexType name="ArrayOfRace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Race" nillable="true" type="tns:Race" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRace" nillable="true" type="tns:ArrayOfRace" />
+  <xs:complexType name="Race">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bonus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PictureUri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Race" nillable="true" type="tns:Race" />
+</xs:schema>

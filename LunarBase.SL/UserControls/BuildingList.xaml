@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="LunarBase.SL.UserControls.BuildingList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:saykorControls="clr-namespace:SaykorControls.SL;assembly=SaykorControls.SL"
+             xmlns:models="clr-namespace:LunarBase.Library.Models;assembly=LunarBase.Library"
+             mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Name="txtTitle" MinWidth="200" HorizontalAlignment="Center"></TextBlock>
+        <ListBox x:Name="pnlBuildings" Grid.Row="1" MinWidth="200" DataContext="{Binding}" ItemsSource="{Binding}" SelectionChanged="pnlBuildings_OnSelectionChanged" DataContextChanged="pnlBuildings_OnDataContextChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid x:Name="pnlItem" DataContext="{Binding Converter={StaticResource BuildingsInCityToBuildingConverter}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width=".3*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="txtBuildingName" Grid.Column="0" Text="{Binding Name}" Width="200" HorizontalAlignment="Left" />
+                        <TextBlock x:Name="txtTurnsNeed" Grid.Column="1" Text="{Binding BuildsRequested}" Width="200" />
+
+                        <!--<ListBox Name="lbBonuses" Grid.Column="1" DataContext="{Binding}" ItemsSource="{Binding Resources}" HorizontalAlignment="Right">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding Name}"></TextBlock>
+                                    <saykorControls:ImageButton Name="btnSelectRace" ImageSource="{Binding PictureName}"></saykorControls:ImageButton>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>-->
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+   
+</UserControl>

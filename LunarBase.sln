@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LunarBase.SL", "LunarBase.SL\LunarBase.SL.csproj", "{1FFEF76C-307B-40EE-84D2-2C3203EC8B84}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7F6F5AA6-1D1E-42C4-A7F4-A85B76CF96F8} = {7F6F5AA6-1D1E-42C4-A7F4-A85B76CF96F8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LunarBase.WebApp", "LunarBase.WebApp\LunarBase.WebApp.csproj", "{7F6F5AA6-1D1E-42C4-A7F4-A85B76CF96F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LunarBase.Library", "LunarBase.Library\LunarBase.Library.csproj", "{42A1173D-8A18-4344-B8A9-943DF7BEBA1B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7F6F5AA6-1D1E-42C4-A7F4-A85B76CF96F8} = {7F6F5AA6-1D1E-42C4-A7F4-A85B76CF96F8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saykor.Providers", "Saykor.Providers\Saykor.Providers.csproj", "{2DBAE3D2-3A3C-4A1B-AE1A-704DC74EF2D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LunarBase.WebData", "LunarBase.WebData\LunarBase.WebData.csproj", "{53758F5A-C3BD-4C01-9F25-0A945C146426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaykorControls.SL", "SaykorControls.SL\SaykorControls.SL.csproj", "{56BB017E-11D4-45B9-8579-EE0B282044B6}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FFEF76C-307B-40EE-84D2-2C3203EC8B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FFEF76C-307B-40EE-84D2-2C3203EC8B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FFEF76C-307B-40EE-84D2-2C3203EC8B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FFEF76C-307B-40EE-84D2-2C3203EC8B84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6F5AA6-1D1E-42C4-A7F4-A85B76CF96F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6F5AA6-1D1E-42C4-A7F4-A85B76CF96F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6F5AA6-1D1E-42C4-A7F4-A85B76CF96F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6F5AA6-1D1E-42C4-A7F4-A85B76CF96F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A1173D-8A18-4344-B8A9-943DF7BEBA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A1173D-8A18-4344-B8A9-943DF7BEBA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A1173D-8A18-4344-B8A9-943DF7BEBA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A1173D-8A18-4344-B8A9-943DF7BEBA1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DBAE3D2-3A3C-4A1B-AE1A-704DC74EF2D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DBAE3D2-3A3C-4A1B-AE1A-704DC74EF2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DBAE3D2-3A3C-4A1B-AE1A-704DC74EF2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DBAE3D2-3A3C-4A1B-AE1A-704DC74EF2D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53758F5A-C3BD-4C01-9F25-0A945C146426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53758F5A-C3BD-4C01-9F25-0A945C146426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53758F5A-C3BD-4C01-9F25-0A945C146426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53758F5A-C3BD-4C01-9F25-0A945C146426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56BB017E-11D4-45B9-8579-EE0B282044B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BB017E-11D4-45B9-8579-EE0B282044B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56BB017E-11D4-45B9-8579-EE0B282044B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56BB017E-11D4-45B9-8579-EE0B282044B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

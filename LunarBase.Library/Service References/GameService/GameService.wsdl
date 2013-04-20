@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="GameService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="GameService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="GameService/Imports">
+      <xsd:import schemaLocation="http://localhost:54477/WebServices/GameService.svc?xsd=xsd0" namespace="GameService" />
+      <xsd:import schemaLocation="http://localhost:54477/WebServices/GameService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:54477/WebServices/GameService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LunarBase.WebData.Models" />
+      <xsd:import schemaLocation="http://localhost:54477/WebServices/GameService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LunarBase.WebData" />
+      <xsd:import schemaLocation="http://localhost:54477/WebServices/GameService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GameService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="GameService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GameService_GetCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCity" />
+  </wsdl:message>
+  <wsdl:message name="GameService_GetCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GameService_SaveBuilding_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBuilding" />
+  </wsdl:message>
+  <wsdl:message name="GameService_SaveBuilding_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBuildingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GameService_GetBuildings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuildings" />
+  </wsdl:message>
+  <wsdl:message name="GameService_GetBuildings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuildingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GameService_SaveBuildingInCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBuildingInCity" />
+  </wsdl:message>
+  <wsdl:message name="GameService_SaveBuildingInCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBuildingInCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GameService_SaveCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCity" />
+  </wsdl:message>
+  <wsdl:message name="GameService_SaveCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GameService_SaveUserProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserProfile" />
+  </wsdl:message>
+  <wsdl:message name="GameService_SaveUserProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GameService_GetRaces_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRaces" />
+  </wsdl:message>
+  <wsdl:message name="GameService_GetRaces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRacesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GameService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="GameService/GameService/Login" message="tns:GameService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="GameService/GameService/LoginResponse" message="tns:GameService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <wsdl:input wsaw:Action="GameService/GameService/GetCity" message="tns:GameService_GetCity_InputMessage" />
+      <wsdl:output wsaw:Action="GameService/GameService/GetCityResponse" message="tns:GameService_GetCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBuilding">
+      <wsdl:input wsaw:Action="GameService/GameService/SaveBuilding" message="tns:GameService_SaveBuilding_InputMessage" />
+      <wsdl:output wsaw:Action="GameService/GameService/SaveBuildingResponse" message="tns:GameService_SaveBuilding_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildings">
+      <wsdl:input wsaw:Action="GameService/GameService/GetBuildings" message="tns:GameService_GetBuildings_InputMessage" />
+      <wsdl:output wsaw:Action="GameService/GameService/GetBuildingsResponse" message="tns:GameService_GetBuildings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBuildingInCity">
+      <wsdl:input wsaw:Action="GameService/GameService/SaveBuildingInCity" message="tns:GameService_SaveBuildingInCity_InputMessage" />
+      <wsdl:output wsaw:Action="GameService/GameService/SaveBuildingInCityResponse" message="tns:GameService_SaveBuildingInCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCity">
+      <wsdl:input wsaw:Action="GameService/GameService/SaveCity" message="tns:GameService_SaveCity_InputMessage" />
+      <wsdl:output wsaw:Action="GameService/GameService/SaveCityResponse" message="tns:GameService_SaveCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserProfile">
+      <wsdl:input wsaw:Action="GameService/GameService/SaveUserProfile" message="tns:GameService_SaveUserProfile_InputMessage" />
+      <wsdl:output wsaw:Action="GameService/GameService/SaveUserProfileResponse" message="tns:GameService_SaveUserProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRaces">
+      <wsdl:input wsaw:Action="GameService/GameService/GetRaces" message="tns:GameService_GetRaces_InputMessage" />
+      <wsdl:output wsaw:Action="GameService/GameService/GetRacesResponse" message="tns:GameService_GetRaces_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

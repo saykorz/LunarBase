@@ -1,0 +1,12 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="LunarBase.SL.App"
+             xmlns:converters="clr-namespace:LunarBase.Library.Converters;assembly=LunarBase.Library"
+             >
+    <Application.Resources>
+        <converters:BuildingsInCityToBuildingConverter x:Key="BuildingsInCityToBuildingConverter"></converters:BuildingsInCityToBuildingConverter>
+        <converters:AddDomainToPictureConverter x:Key="AddDomainToPictureConverter" x:Name="AddDomainToPictureConverter"></converters:AddDomainToPictureConverter>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" x:Name="BoolToVisibilityConverter" />
+        <converters:ValueToVisibilityConverter x:Key="ValueToVisibilityConverter" x:Name="ValueToVisibilityConverter" />
+    </Application.Resources>
+</Application>

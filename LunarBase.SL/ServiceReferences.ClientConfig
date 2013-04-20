@@ -1,0 +1,24 @@
+﻿<configuration>
+  <system.serviceModel>
+    <bindings>
+      <customBinding>
+        <binding name="CustomBinding_GameService">
+          <binaryMessageEncoding />
+          <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+        </binding>
+        <binding name="CustomBinding_AuthorizationService">
+          <binaryMessageEncoding />
+          <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+        </binding>
+      </customBinding>
+    </bindings>
+    <client>
+      <endpoint address="../WebServices/GameService.svc/binary"
+          binding="customBinding" bindingConfiguration="CustomBinding_GameService"
+          contract="GameService.GameService" name="CustomBinding_GameService" />
+      <endpoint address="../WebServices/AuthorizationService.svc/binary"
+          binding="customBinding" bindingConfiguration="CustomBinding_AuthorizationService"
+          contract="AuthorizationService.AuthorizationService" name="CustomBinding_AuthorizationService" />
+    </client>
+  </system.serviceModel>
+</configuration>

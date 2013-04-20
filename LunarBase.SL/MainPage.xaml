@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="LunarBase.SL.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:views="clr-namespace:LunarBase.SL.View"
+             DataContext="{Binding Source={StaticResource ApplicationViewModel}}" Background="Transparent">
+
+    <telerik:RadBusyIndicator x:Name="bIndicator" IsBusy="{Binding IsBusy}" BusyContent="{Binding IsBusyMessage}" Background="Transparent">
+        <Grid x:Name="LayoutRoot" HorizontalAlignment="Stretch" Background="Transparent" >
+            <Border CornerRadius="0,0,5,5" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Stretch">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="LightGray" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid HorizontalAlignment="Stretch" Background="Transparent">
+                    <views:Login Name="ucLogin" DataContext="{Binding UserProfile}" Visibility="{Binding IsApproved, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=Inverse}"></views:Login>
+
+                    <telerik:RadExpander x:Name="radExpander" IsExpanded="{Binding IsApproved}" VerticalContentAlignment="Top" Background="Transparent"
+                                         DataContext="{Binding UserProfile}" Visibility="{Binding IsApproved, Converter={StaticResource BoolToVisibilityConverter}}"
+                                         telerik:AnimationManager.IsAnimationEnabled="{Binding ElementName=AnimationEnableCheckBox, Path=IsChecked}">
+                        <telerik:RadExpander.Header>
+                            <StackPanel HorizontalAlignment="Stretch">
+                                <TextBlock x:Name="expanderCaption" Text="Header" HorizontalAlignment="Left" />
+                                <Button x:Name="btnAdmin" Content="Go To Administration" HorizontalAlignment="Right" Click="btnAdmin_Click"></Button>
+                            </StackPanel>
+                            
+                        </telerik:RadExpander.Header>
+                        <telerik:RadExpander.Content>
+                            <Grid Name="pnlCity" Height="600" HorizontalAlignment="Stretch" Background="Transparent">
+                                <views:Administration Name="pnlAdmin" Visibility="Collapsed"></views:Administration>
+                                <views:RaceListView Name="pnlChooseRase" DataContext="{Binding Source={StaticResource ApplicationViewModel}}" Visibility="{Binding UserProfile.RaceId, Converter={StaticResource ValueToVisibilityConverter}, ConverterParameter=Inverse}"></views:RaceListView>
+                                <views:CityView Name="pnlCityView" DataContext="{Binding Source={StaticResource ApplicationViewModel}}" Visibility="{Binding UserProfile.CityId, Converter={StaticResource ValueToVisibilityConverter}}"></views:CityView>
+                            </Grid>
+                        </telerik:RadExpander.Content>
+                    </telerik:RadExpander>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </telerik:RadBusyIndicator>
+</UserControl>

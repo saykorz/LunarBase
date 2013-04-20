@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="LunarBase.SL.View.RaceListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:saykorControls="clr-namespace:SaykorControls.SL;assembly=SaykorControls.SL"
+    >
+
+    <Grid HorizontalAlignment="Center">
+        <ListBox DataContext="{Binding}" ItemsSource="{Binding Races}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <saykorControls:ImageButton Name="btnSelectRace" ImageSource="{Binding PictureUri, Converter={StaticResource AddDomainToPictureConverter}}" Tag="{Binding Id}" Click="btnSelectRace_OnClick"></saykorControls:ImageButton>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                        <TextBlock Text="{Binding Bonus}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+
+
+</UserControl>
