@@ -33,6 +33,20 @@ namespace LunarBase.WebApp.WebServices
         }
 
         [OperationContract]
+        public ObservableCollection<CityInit> GetCityCoordinates(double latitude, double longitude, double radius)
+        {
+            var ci = new ObservableCollection<CityInit>();
+            MongoHelpers.LoadData<City>().ToObservableCollection().ForEach(c => ci.Add(new CityInit()
+                {
+                    CityId = c.Id,
+                    Latitude = c.Latitude,
+                    Longitude = c.Longitude,
+                    Name = c.Name
+                }));//.Where(c => c.Latitude is between latitude +- radius && c.Longtitude is between longitude +- radius )
+            return ci;
+        }
+        
+        [OperationContract]
         public City GetCity(string authToken, string cityId)
         {
             var city = MongoHelpers.LoadData<City>().FirstOrDefault(c => c.Id == cityId);

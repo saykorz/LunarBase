@@ -24,10 +24,10 @@ namespace LunarBase.WebData.Models
         public string Name { get; set; }
 
         [DataMember]
-        public string Latitude { get; set; }
+        public double Latitude { get; set; }
 
         [DataMember]
-        public string Longitude { get; set; }
+        public double Longitude { get; set; }
 
         private ObservableCollection<string> buildingInCityIds = new ObservableCollection<string>();
         [DataMember]
